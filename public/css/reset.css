@@ -21,6 +21,8 @@ body,html{
     overflow: hidden;
 }
 
-
+#root{
+    height:100%;
+}
 
 

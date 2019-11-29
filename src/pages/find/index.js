@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-
+import {PageContainer} from "common/styled"
 export default class Find extends Component {
     render() {
         return (
-            <div>
+            <PageContainer>
                 Find
-            </div>
+            </PageContainer>
         )
     }
 }
