@@ -33,3 +33,9 @@ export const Login = Loadable({
     loader:_=>import("./login"),
     loading:Loading
 })
+
+
+export const Category =  Loadable({
+    loader:_=>import("./category"),
+    loading:Loading
+})

@@ -3,7 +3,8 @@ import {
     Find,
     Order,
     Mine,
-    Login
+    Login,
+    Category
 } from "pages"
 
 
@@ -51,6 +52,12 @@ export const NoTabBarRoute = [
     {
         path:"/login",
         component:Login,
+        meta:{}
+    },
+    {
+        
+        path:"/category",
+        component:Category,
         meta:{}
     }
 ];
