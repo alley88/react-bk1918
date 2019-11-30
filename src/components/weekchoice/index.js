@@ -6,10 +6,15 @@ import BscrollCom from "common/bscroll"
 
 @connect(mapStateToProps, mapDispatchToProps)
 class Weekchoice extends Component {
+    constructor(){
+        super();
+
+        this.page = 0;
+    }
     render() {
         let { week_choice } = this.props;
         return (
-            <BscrollCom>
+            <BscrollCom ref="scroll">
             <WeekListContainer>
                 {
                     week_choice.map((item, index) => (
@@ -34,9 +39,20 @@ class Weekchoice extends Component {
             </BscrollCom>
         )
     }
+    componentWillUpdate(){
+        this.refs.scroll.handlefinishPullUp();
+    }
     componentDidMount() {
-
-        this.props.handleAsyncWeek();
+        this.handleAsyncData();
+        //上拉加载更多
+        this.refs.scroll.handlepullingUp(()=>{
+           this.handleAsyncData();
+        })
+    }
+    handleAsyncData(){
+        let {cityId} = this.props
+        this.props.handleAsyncWeek(cityId,this.page);
+        this.page++;
     }
 }
 

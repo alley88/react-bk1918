@@ -1,12 +1,13 @@
 import {weekAsyncAction} from "actions/week/actionCreator"
 export const mapStateToProps = (state)=>({
-    week_choice:state.home.week_choice
+    week_choice:state.home.week_choice,
+    cityId:state.user.cityId
 })
 
 
 export const mapDispatchToProps = (dispatch)=>({
-    handleAsyncWeek(){
+    handleAsyncWeek(cityId,page){
        
-        dispatch(weekAsyncAction())
+        dispatch(weekAsyncAction(cityId,page))
     }
 })
